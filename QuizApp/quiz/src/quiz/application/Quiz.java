@@ -31,6 +31,7 @@ public class Quiz extends JFrame implements ActionListener {
 
     Quiz(String name, String numQuestions, String difficulty, String category){
 
+
         String[][][] data = api.fetchTriviaQuestions(Integer.valueOf(numQuestions), difficulty,category);
         this.questions = data[0]; // Assign questions array
         this.answers = data[1];   // Assign answers array

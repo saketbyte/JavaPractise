@@ -35,13 +35,13 @@ public class Rules extends JFrame implements ActionListener {
         // Writing Rules
         String rulePage = "<html>" +
                 "1. Each question has only one correct answer, choose wisely." + "<br><br>" +
-                "2. You have 30 seconds to answer each question, time waits for no one." + "<br><br>" +
+                "2. You have 25 seconds to answer each question, time waits for no one." + "<br><br>" +
                 "3. Once submitted, your answer is final—there’s no turning back." + "<br><br>" +
                 "4. Correct answers give you +10 points, wrong or unanswered questions give you nothing." + "<br><br>" +
-                "5. No lifelines, no cheats—Google won't save you here." + "<br><br>" +
-                "6. Compete for the leaderboard, but remember, even legends start at zero." + "<br><br>" +
-                "7. Getting disconnected might cost you, so keep your internet strong." + "<br><br>" +
-                "8. Have fun, learn, and may your knowledge be greater than John Snow's!" + "<br><br>" +
+                "5. 1 lifeline Orion (50-50) where Orian Pax /Optimus Prime defeats two wrong options for you!" + "<br><br>" +
+                "6. Choose your best realm! " + "<br><br>" +
+                "7. Freedom is the right of all Sentient Beings! - Optimus, respect that!" + "<br><br>" +
+                "8. Have fun, learn, and may your knowledge be greater than any Sentient Being!" + "<br><br>" +
                 "</html>";
 
         JLabel ruleBook = new JLabel();
@@ -84,6 +84,19 @@ public class Rules extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent ae){
         if (ae.getSource() == start) {
             setVisible(false);
+            if(numQuestions.equals(""))
+            {
+                numQuestions="10";
+            }
+            if(category.equals(""))
+            {
+                category="science";
+            }
+
+            if(difficulty.equals(""))
+            {
+                difficulty="easy";
+            }
             new Quiz(name, numQuestions,difficulty,category);
         } else {
             setVisible(false);
